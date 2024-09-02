@@ -1,0 +1,23 @@
+SQL:
+      SELECT 
+          state, 
+          SUM(enrollment) AS total_enrollment
+      FROM 
+          pre_k_enrollment_data
+      WHERE 
+          year = 2021
+      GROUP BY 
+          state
+      ORDER BY 
+          total_enrollment DESC
+      LIMIT 10;
+
+
+
+total_enrollment_by_fips = (
+    df.groupby("state")["enrollment"]
+      .sum()
+      .reset_index()
+      .sort_values(by='enrollment', ascending=False)
+      .reset_index(drop=True)
+)
