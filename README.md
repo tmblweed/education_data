@@ -45,7 +45,9 @@ Delaware              2,040.0
 Hawaii                1,578.0
 Notes
 
-Used ChatGPT to format, add logging, and reorganize the code. Tested manually using Jupyter Notebook. Did not write any test cases, considering the time constraints.
+**Technologies used:
+**Used ChatGPT to format, add logging, and reorganize/format the code.
+Tested manually using Jupyter Notebook. Did not write any test cases, considering the time constraints.
 
 
 Used the following miscellaneous Code to Validate the API. I was surprised by the lack of data for California and other states—did not have the time to investigate why this was the case.
