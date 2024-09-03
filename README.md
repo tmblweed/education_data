@@ -23,6 +23,8 @@ Data Querying:
 Data Persistence and Visualization:
  Persist the data to a database, on top of which teams can query it via a data visualization layer.
 
+Additional, the code would have test cases for each method, and a way to do data validations for the data that's returned from the API and some sort of a quality checks (For e.g, why is there no CA data)
+
 State                Enrollment
 --------------------------------
 Illinois             71,078.0
