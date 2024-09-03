@@ -51,22 +51,22 @@ the following API returned a different set of results
 
 from urllib.request import urlopen
 from json import loads
-url = "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/summaries?var=enrollment&stat=sum&by=state_location"
-response = urlopen(url)
-data = loads(response.read())
-df = pd.DataFrame(data['results'])
-filtered_df = df[df['year'] == 2021].sort_values(by='enrollment', ascending=False)
-filtered_df
+ url = "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/summaries?var=enrollment&stat=sum&by=state_location"
+ response = urlopen(url)
+ data = loads(response.read())
+ df = pd.DataFrame(data['results'])
+ filtered_df = df[df['year'] == 2021].sort_values(by='enrollment', ascending=False)
+ filtered_df
 
-2021	CA	5874948
-2021	TX	5428609
-2021	FL	2832739
-2021	NY	2526204
-2021	IL	1867412
-2021	GA	1740875
-2021	OH	1682397
-2021	PA	1671899
-2021	NC	1526495
-2021	MI	1397111
-2021	NJ	1339937
-2021	VA	1244624
+  2021	CA	5874948
+  2021	TX	5428609
+  2021	FL	2832739
+  2021	NY	2526204
+  2021	IL	1867412
+  2021	GA	1740875
+  2021	OH	1682397
+  2021	PA	1671899
+  2021	NC	1526495
+  2021	MI	1397111
+  2021	NJ	1339937
+  2021	VA	1244624
