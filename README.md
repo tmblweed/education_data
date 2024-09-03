@@ -27,18 +27,21 @@ Notes:
  Used chatgpt to format/add logging and reorganize  code, and jupyter notebook to test
 
 
-Misc code to validate for the API
-
+**Misc code to validate for the API
+**
 *surprised about lack of data for CA and others - did not get to dig in as to why that is
-from urllib.request import urlopen
-from json import loads
-url = "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-pk/"
-response = urlopen(url)
-data = loads(response.read())
-filtered_data = [entry for entry in data['results'] if entry['fips'] == 6]
-filtered_data
+
+  
+  from urllib.request import urlopen
+  from json import loads
+  url = "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/2021/grade-pk/"
+  response = urlopen(url)
+  data = loads(response.read())
+  filtered_data = [entry for entry in data['results'] if entry['fips'] == 6]
+  filtered_data
 
 the following API returned a different set of results
+
 from urllib.request import urlopen
 from json import loads
 url = "https://educationdata.urban.org/api/v1/schools/ccd/enrollment/summaries?var=enrollment&stat=sum&by=state_location"
