@@ -1,7 +1,15 @@
 # education_data
 
-Script can be run as
- python3 file/to/loc/enrollment_details.py --year 2021 
+Script can be run as python3 file/to/loc/enrollment_details.py --year 2021 
+
+ The goal of the script is to fetch results from an API with options to retry and wait, filter data by year and state. Then the results are persisted to a local folder, which are then loaded again into a data frame for additional cleaning and querying
+
+ Ideally, in a production envrionemnt, we would do something like the following
+ 1) Data ingestion (either on a host with a cron job or airflow schedule or via AWS lambda triggered on a schedule) on a batched schedule, since this is not event data
+ 2) At the code level, get the mappings for states (fips) and other slices of data and persist them via the API, in a time stamped way to get the latest data. Also, extend the querying to be generic in a way where can construct query for a few different dimensions
+ 3) Store data in parquet in S3 (date partitioned with subfolders) or another cloud based storage
+ 4) Query data either through an orchestration platform like Airflow of via another lambda style function
+ 5) Persist data to a database, on top of which there's a way for teams to query via a data visualitoin layer
 
                state  enrollment
             Illinois     71078.0
@@ -24,11 +32,10 @@ District of Columbia     11212.0
 
 
 Notes:
- Used chatgpt to format/add logging and reorganize  code, and jupyter notebook to test
+ Used chatgpt to format/add logging and reorganize  code, and jupyter notebook to test manually. did not write any test cases keeping in mind the time
 
 
-**Misc code to validate for the API
-**
+**Misc code to validate for the API**
 *surprised about lack of data for CA and others - did not get to dig in as to why that is
 
   
